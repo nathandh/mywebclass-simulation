@@ -1,7 +1,7 @@
-const { test, expect } = require('@playwright/test')
+const { test, expect } = require('@playwright/test');
 
-test('Should have a privacy policy page', async ({ page }) => {
-  await page.goto('http://localhost:3000')
-  const privacyPolicyLink = await page.$('a[href="/privacy-policy"]')
-  expect(privacyPolicyLink).not.toBeNull()
-})
+test('Check Privacy Policy Page', async ({ page }) => {
+  await page.goto('https://nathandh.github.io/mywebclass-simulation/privacy.html');
+  const pageTitle = await page.title();
+  expect(pageTitle).toBe('MyWebClass.org | Privacy Policy');
+});
