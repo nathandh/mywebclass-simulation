@@ -2,7 +2,7 @@ const { test } = require('@playwright/test')
 const assert = require('assert')
 
 test('Sitemap.xml file is present', async ({ page }) => {
-  await page.goto('https://example.com')
+  await page.goto('http://localhost:3000')
 
   const sitemapLinkTag = await page.$('link[rel="sitemap"]')
 
