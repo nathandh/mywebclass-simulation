@@ -60,7 +60,7 @@ Before you can run the development server, you need to install its dependencies.
 Now that you've installed the dependencies, you can run the development server. To do this, follow these steps:
 
 1. Navigate to the root directory of your project in your terminal.
-2. Run the following command: `npm run dev`
+2. Run the following command: `npm start`
 The development server should now be running, and you can access your web application by opening a web browser and navigating to http://localhost:3000 (or the port number specified in your project configuration).
 
 Make changes to your code, and the development server will automatically reload the web page to show the changes in real-time.
