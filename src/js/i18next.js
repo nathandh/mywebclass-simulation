@@ -4,7 +4,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import enTranslation from '../locales/en/translation.json';
 import esTranslation from '../locales/es/translation.json';
 import frTranslation from '../locales/fr/translation.json';
-import deTranslation from '../locales/fr/translation.json';
+import deTranslation from '../locales/de/translation.json';
 
 /**
  * Uses the appropriate translation dictionary, based on language, and associated lookupKey entry to
