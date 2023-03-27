@@ -18,7 +18,7 @@ module.exports = {
   mode: 'development',
   entry: './src/js/main.js',
   output: {
-    filename: 'index.js',
+    filename: '[name][chunkhash].js',
     path: path.resolve(__dirname, './docs'),
     clean: true,
   },
@@ -122,4 +122,10 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+    minimize: false,
+  }
 };

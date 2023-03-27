@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const fs = require('fs');
 const prefixer = require('autoprefixer');
 
@@ -18,7 +19,7 @@ module.exports = {
   mode: 'production',
   entry: './src/js/main.js',
   output: {
-    filename: 'index.js',
+    filename: '[name][chunkhash].js',
     path: path.resolve(__dirname, './docs'),
     clean: true,
   },
@@ -117,5 +118,37 @@ module.exports = {
         },
       },
     ],
+  },
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        }
+      },
+      chunks: 'all',
+      maxSize: 244000,
+      minSize: 2000,
+      minRemainingSize: 0,
+      minChunks: 1,
+    },
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+        terserOptions: {
+          format: {
+            comments: false,
+          },
+          compress: {
+            drop_console: true, // Remove any console.log statements from minified files
+          }
+        }
+      })
+    ],
+    usedExports: true,
   },
 };
