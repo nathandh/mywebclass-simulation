@@ -50,7 +50,6 @@ Before you can set up the development server, you need to install Node.js and np
 node -v
 npm -v
 
-
 ## Step 2: Clone the Repository
 Just like when you're deploying your project, you need to clone the repository to your local machine. To do this, follow the same steps as in Step 2 of the previous section.
 
