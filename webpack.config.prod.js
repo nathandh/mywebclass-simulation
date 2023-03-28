@@ -127,7 +127,7 @@ module.exports = {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'all',
-        }
+        },
       },
       chunks: 'all',
       maxSize: 244000,
@@ -145,9 +145,9 @@ module.exports = {
           },
           compress: {
             drop_console: true, // Remove any console.log statements from minified files
-          }
-        }
-      })
+          },
+        },
+      }),
     ],
     usedExports: true,
   },
